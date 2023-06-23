@@ -2,7 +2,7 @@ import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
 
-img = cv.imread('./img/bubbles.jpg', 0)
+img = cv.imread('./labfiles/bubbles.jpg', 0)
 cv.imshow('input', img)
 seed_img = img
 # img = img // 255
