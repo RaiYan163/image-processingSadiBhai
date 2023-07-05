@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 img = cv.imread('./cube.png', 0)
 cv.imshow('cube', img)
+cv.imwrite('./input.jpg', img)
 
 def get_spatial_kernel(ksize):
     d = ksize // 2
@@ -15,7 +16,6 @@ def get_spatial_kernel(ksize):
             if(kernel[i][j] < 0):
                 kernel[i][j] = 0
     print(kernel)
-    plt.imshow(kernel, 'kernel')
     return kernel
 
 def get_range_kernel(img, ksize, x, y, sigma):
@@ -50,6 +50,7 @@ cv.normalize(output, output, 0, 255, cv.NORM_MINMAX)
 output = np.round(output).astype(np.uint8)
 
 cv.imshow('output', output)
+cv.imwrite('./output.jpg', output)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
